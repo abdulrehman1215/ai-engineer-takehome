@@ -1,8 +1,8 @@
 # MCP configuration
 
-No MCP server was needed to build the slices. One connector was used, read-only, at the start:
+No MCP server was needed to build the slices. One connector was used, mostly read-only:
 
-- Gmail connector: to open the thread with the recruiter and find the brief's PDF attachment. The tools allowed are `search_threads`, `get_thread`, `get_message`. The connector cannot download attachments, so the PDF was taken from the Downloads folder.
+- Gmail connector: to open the thread with the recruiter and find the brief's PDF attachment. The tools allowed were `search_threads`, `get_thread` and `get_message`. The connector cannot download attachments, so the PDF was taken from the Downloads folder. At the end I also used `create_draft` once to save the submission email as an unsent draft.
 - Denied: `send_message`, `reply`, `forward`, `trash_message`, `trash_thread`, `delete_draft`, `delete_label`. Nothing was sent to anyone.
 
 Edits to `dossier/` were also denied by the local permission rules.
