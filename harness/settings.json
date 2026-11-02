@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 harness/hooks/guard.py",
+            "statusMessage": "Checking commit and dossier guard"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 harness/hooks/test_on_edit.py",
+            "timeout": 120,
+            "statusMessage": "Running tests"
+          }
+        ]
+      }
+    ]
+  }
+}
